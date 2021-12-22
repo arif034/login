@@ -16,19 +16,7 @@ class App extends Component {
       userName: "",
       password: ""
     };
-    this.onLogin = this.onLogin.bind(this);
-    //this.onSignUp = this.onSignUp.bind(this);
   }
-
-  onLogin = () => {
-    console.log(this.props.history);
-    this.props.history.push("/login");
-  };
-
-  // onSignUp = () => {
-  //   console.log(this.props.history);
-  //   this.props.history.push("/signUp");
-  // };
 
   render() {
     return (
@@ -41,7 +29,7 @@ class App extends Component {
           <Route exact path="/signUp" element={<SignUp />} />
           <Route exact path="/" component={<App />} />
         </Routes>
-        <button onClick={this.onLogin}>Login</button>
+        <button onClick={() => history.push("/login")}>Login</button>
         <br />
         <br />
         <button onClick={() => history.push("/signUp")}>SignUp</button>
