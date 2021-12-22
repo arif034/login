@@ -6,18 +6,9 @@ import Home from "./Home.js";
 import About from "./About.js";
 import SignUp from "./SignUp.js";
 import Login from "./Login.js";
-import history from "./history.js";
+import ParentComponent from "./ParentComponent";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoggedIn: false,
-      userName: "",
-      password: ""
-    };
-  }
-
   render() {
     return (
       <div className="App">
@@ -27,12 +18,8 @@ class App extends Component {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signUp" element={<SignUp />} />
-          <Route exact path="/" component={<App />} />
+          <Route exact path="/" element={<ParentComponent />} />
         </Routes>
-        <button onClick={() => history.push("/login")}>Login</button>
-        <br />
-        <br />
-        <button onClick={() => history.push("/signUp")}>SignUp</button>
       </div>
     );
   }
