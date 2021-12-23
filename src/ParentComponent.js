@@ -8,7 +8,7 @@ class ParentComponent extends Component {
         <button onClick={() => history.push("/login")}>Login</button>
         <br />
         <br />
-        <button onClick={() => history.push("/signUp")}>SignUp</button>
+        <button onClick={() => history.push("/sign-up")}>SignUp</button>
       </div>
     );
   }
