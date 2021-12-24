@@ -1,11 +1,8 @@
 {
-  "name": "react",
+  "name": "login-application",
   "version": "1.0.0",
-  "description": "React example starter project",
-  "keywords": [
-    "react",
-    "starter"
-  ],
+  "description": "Sample code for beginners to learn react",
+  "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "react": "17.0.2",
