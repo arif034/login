@@ -1,14 +1,17 @@
 import { Component } from "react";
-import history from "./history.js";
-
+import { Link } from "react-router-dom";
 class ParentComponent extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => history.push("/login")}>Login</button>
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
         <br />
         <br />
-        <button onClick={() => history.push("/sign-up")}>SignUp</button>
+        <Link to="/sign-up">
+          <button>SignUp</button>
+        </Link>
       </div>
     );
   }
