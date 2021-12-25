@@ -4,7 +4,11 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: ""
+      firstName: "",
+      lastName: "",
+      age: 0,
+      password: "",
+      confirmPassword: ""
     };
   }
 
@@ -14,8 +18,42 @@ class Login extends Component {
     });
   };
 
+  changeLastNameHandler = (event) => {
+    this.setState({
+      lastName: event.target.value
+    });
+  };
+
+  changeAgeHandler = (event) => {
+    this.setState({
+      age: event.target.value
+    });
+  };
+
+  changePasswordHandler = (event) => {
+    this.setState({
+      password: event.target.value
+    });
+  };
+
+  changeConfirmPasswordHandler = (event) => {
+    this.setState({
+      confirmPassword: event.target.value
+    });
+  };
+
   onChange = (event) => {
-    alert(this.state.firstName);
+    alert(
+      this.state.firstName +
+        " " +
+        this.state.lastName +
+        " " +
+        this.state.age +
+        " " +
+        this.state.password +
+        " " +
+        this.state.confirmPassword
+    );
     event.preventDefault();
   };
 
@@ -24,12 +62,43 @@ class Login extends Component {
       <div>
         <Navbar />
         <form>
-          <label>FirstName</label>
-          <br />
+          <label>First Name</label>
           <br />
           <input
             value={this.state.firstName}
             onChange={this.changeFirstNameHandler}
+          />
+          <br />
+          <br />
+          <label>Last Name</label>
+          <br />
+          <input
+            value={this.state.lastName}
+            onChange={this.changeLastNameHandler}
+          />
+          <br />
+          <br />
+          <label>Age</label>
+          <br />
+          <input
+            value={this.state.age}
+            onChange={this.changeAgeHandler}
+          />
+          <br />
+          <br />
+          <label>Password</label>
+          <br />
+          <input
+            value={this.state.password}
+            onChange={this.changePasswordHandler}
+          />
+          <br />
+          <br />
+          <label>Confirm Password</label>
+          <br />
+          <input
+            value={this.state.confirmPassword}
+            onChange={this.changeConfirmPasswordHandler}
           />
           <br />
           <br />
