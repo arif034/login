@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar.js";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +8,8 @@ class Login extends Component {
       lastName: "",
       age: 0,
       password: "",
-      confirmPassword: ""
+      confirmPassword: "",
+      togglePassword: 0
     };
   }
 
@@ -57,6 +58,21 @@ class Login extends Component {
     event.preventDefault();
   };
 
+  onTogglePassword = (event) => {
+    this.setState((prevState) => {
+      return {
+        togglePassword: this.modulus(
+          prevState.togglePassword - 1
+        )
+      };
+    });
+    event.preventDefault();
+  };
+
+  modulus = (value) => {
+    if (value <= 0) return -value;
+  };
+
   render() {
     return (
       <div>
@@ -90,6 +106,11 @@ class Login extends Component {
           <br />
           <input
             value={this.state.password}
+            type={
+              this.state.togglePassword === 0
+                ? "password"
+                : "text"
+            }
             onChange={this.changePasswordHandler}
           />
           <br />
@@ -98,11 +119,21 @@ class Login extends Component {
           <br />
           <input
             value={this.state.confirmPassword}
+            type={
+              this.state.togglePassword === 0
+                ? "password"
+                : "text"
+            }
             onChange={this.changeConfirmPasswordHandler}
           />
           <br />
           <br />
           <button onClick={this.onChange}>Submit</button>
+          <br />
+          <br />
+          <button onClick={this.onTogglePassword}>
+            Show Password
+          </button>
         </form>
       </div>
     );
