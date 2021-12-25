@@ -44,17 +44,24 @@ class Login extends Component {
   };
 
   onChange = (event) => {
-    alert(
-      this.state.firstName +
-        " " +
-        this.state.lastName +
-        " " +
-        this.state.age +
-        " " +
-        this.state.password +
-        " " +
-        this.state.confirmPassword
-    );
+    if (
+      this.state.password !== this.state.confirmPassword
+    )
+      alert(
+        "password and confirm password dont match please check and reenter"
+      );
+    else
+      alert(
+        this.state.firstName +
+          " " +
+          this.state.lastName +
+          " " +
+          this.state.age +
+          " " +
+          this.state.password +
+          " " +
+          this.state.confirmPassword
+      );
     event.preventDefault();
   };
 
