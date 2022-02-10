@@ -7,7 +7,7 @@ import About from "./About.js";
 import SignUp from "./SignUp.js";
 import Login from "./Login.js";
 import ParentComponent from "./ParentComponent";
-
+//learn jest for testing in react and component pattern for react interview
 class App extends Component {
   render() {
     return (
